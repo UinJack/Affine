@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Affine_Transformation</title>
+    <link rel="stylesheet" href="lib/leaflet/leaflet.css"/>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap-theme.min.css">
+    <script type="text/javascript" src="lib/leaflet/leaflet.js"></script>
+
+    <script src="http://cdn.bootcss.com/sylvester/0.1.3/sylvester.min.js"></script>
+    <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <style>
+        html, body, #map {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #orgin_map, #target_map {
+            float: left;
+            width: 50%;
+            height: 100%;
+        }
+
+        .points-view {
+            position: absolute;
+            width: 80%;
+            bottom: 10px;
+            left: 10%;
+            right: 10%;
+            z-index: 999;
+            background: rgba(255, 255, 255, 0.5);
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .h-cross {
+            pointer-events: none;
+            position: absolute;
+            top: 0px;
+            bottom: 50%;
+            left: 0px;
+            right: 0px;
+            border-bottom: solid;
+            border-color: #000000;
+            z-index: 999;
+        }
+
+        .s-cross {
+            pointer-events: none;
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 25%;
+            right: 25%;
+            border-left: solid;
+            border-right: solid;
+            border-color: #000000;
+            z-index: 999;
+        }
+    </style>
+</head>
+
+<body>
+<div class="h-cross"></div>
+<div class="s-cross"></div>
+<div id="map">
+    <div id="orgin_map"></div>
+    <div id="target_map"></div>
+</div>
+<table id="table" class="table points-view">
+    <caption>
+        <a href="javascript:makeArray()">Save</a>
+        <a href="javascript:check()">Check</a>
+        <input type="file" id="file" style="height:0px;width:0px;" onchange="handleFiles(this.files)">
+        <input type="button" value="click" id="brow">
+
+    </caption>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>orginX</th>
+        <th>orginY</th>
+        <th>targetX</th>
+        <th>targetY</th>
+    </tr>
+    </thead>
+
+    <tbody onclick="tableClick()">
+    <tr>
+        <td>1</td>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+        <td>@mdo</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+        <td>@mdo</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+        <td>@mdo</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+        <td>@mdo</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+<script language="JavaScript">
+
+    <!--
+    //input file 的style属性宽高为零是兼容chrome浏览器，用display:none非所有浏览器支持
+    $(function () {
+        $("#brow").click(function () {
+            $("#file").click();
+//            if ($.browser.msie)
+//                showimg();
+        });
+        $("#file").change(function () {
+//            showimg();
+        });
+//        function showimg() {
+//            alert($("#file").val());
+//        }
+    })
+    //    var matrix;
+
+    function handleFiles(files) {
+        if (files.length) {
+            var file = files[0];
+            var reader = new FileReader();
+            if (file.type == "application/json") {
+                debugger;
+                reader.onload = function () {
+                    var data = JSON.parse(this.result);
+                    matrix = MatrixCalc(data);
+
+                    for (var j = 0; j <= 5; j++) {
+
+                        $('#table tbody:eq(0) tr:eq(' + j + ') td:eq(1)').html(data[j].from[0]);
+                        $('#table tbody:eq(0) tr:eq(' + j + ') td:eq(2)').html(data[j].from[1]);
+
+
+                        $('#table tbody:eq(0) tr:eq(' + j + ') td:eq(3)').html(data[j].to[0]);
+                        $('#table tbody:eq(0) tr:eq(' + j + ') td:eq(4)').html(data[j].to[1]);
+
+
+                    }
+                }
+                reader.readAsText(file);
+            }
+        }
+    }
+    //-->
+</script>
+<script src="src/MatrixCalc.js"></script>
+<script src="src/MapManager.js"></script>
+</html>
