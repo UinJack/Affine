@@ -14,7 +14,7 @@ var target_Url = 'http://d{s}.map.baidu.com/resource/mappic/bj/2/3/lv{z}/{x},{y}
     target_osm = L.tileLayer(target_Url, {
         attribution: osmAttrib,
         maxZoom: 12,
-        minZoom: 6,
+        minZoom: 7,
         zoomReverse: true,
         zoomOffset: 1,
         subdomains: [0, 1, 2, 3]
@@ -60,6 +60,11 @@ function makeArray() {
 
 
     }
+
+    /* 使用demo */
+    var blob = stringToBlob(JSON.stringify(data));
+    download('data.json', blob);
+
     matrix = new MatrixCalc(data);
 }
 
