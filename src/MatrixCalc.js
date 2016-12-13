@@ -33,12 +33,6 @@ function MatrixCalc(arr) {
     var e = (eqnsDEF.e(2, 4) - eqnsDEF.e(2, 3) * f) / eqnsDEF.e(2, 2);
     var d = (eqnsDEF.e(1, 4) - eqnsDEF.e(1, 3) * f - eqnsDEF.e(1, 2) * e) / eqnsDEF.e(1, 1);
 
-    //console.log(a);
-    //console.log(b);
-    //console.log(c);
-    //console.log(d);
-    //console.log(e);
-    //console.log(f);
     this.A = a;
     this.B = b;
     this.C = c;
