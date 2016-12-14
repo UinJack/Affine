@@ -1,6 +1,6 @@
 /**
  * by Jack
- * depend on sylvester.j
+ * depend on sylvester.js
  * calculate 2nd order polynomial by Gauss elimination
  * */
 

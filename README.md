@@ -2,18 +2,32 @@
 
 By 2nd order polynomial correct points.
 
-![img](css/view.gif)
+## Dependent JS
+
+* [sylvester.js](http://sylvester.jcoglan.com/)
+* [leaflet.js](http://leafletjs.com/)
 
 ## [Demo](https://bkgiser.github.io/Affine_Transformation/)
 
+![img](css/view.gif)
 
-## Method
-
-### MatrixCalc(Arr)
+## GetStart
 
 ```javascript
 
 var mat = new MatrixCalc(Arr);
+
+mat.to_target(x,y); //{x: targetX, y: targetY}
+
+mat.to_orgin(x,y); // {x: oX, y: oY}
+
+mat.A;  //transform parameter
+mat.B;  //transform parameter
+mat.C;  //transform parameter
+mat.D;  //transform parameter
+mat.E;  //transform parameter
+mat.F;  //transform parameter
+
 
 ```
 
@@ -47,20 +61,12 @@ var Arr = [
 
 ```
 
-### to_target(x,y)
+## Why
 
-```javascript
-    
-     return {x: targetX, y: targetY};
+When some online map too same but still has position difference, we could use this method find transform parameters,
+and we could get where is different,I know every PC software could do this, but website more convenient, 
+when we couldn't update online map, however we could update points. 
 
-```
+## License
 
-
-### to_target(x,y)
-
-
-```javascript
-    
-     return {x: targetX, y: targetY};
-
-```
+MIT
