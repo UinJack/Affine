@@ -1,15 +1,15 @@
 # Affine_Transformation
 
-Use 2nd order polynomial correct points.
+By 2nd order polynomial correct points.
 
 ![img](css/view.gif)
 
 ## [Demo](https://bkgiser.github.io/Affine_Transformation/)
 
 
-## Usage
+## Method
 
-### Method MatrixCalc(Arr)
+### MatrixCalc(Arr)
 
 ```javascript
 
@@ -47,7 +47,7 @@ var Arr = [
 
 ```
 
-### Method to_target(x,y)
+### to_target(x,y)
 
 ```javascript
     
@@ -56,7 +56,7 @@ var Arr = [
 ```
 
 
-### Method to_target(x,y)
+### to_target(x,y)
 
 
 ```javascript
