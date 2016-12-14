@@ -1,6 +1,6 @@
-# Affine_Transformation
+# Affine
 
-By 2nd order polynomial correct points.
+Affine transformation by 2nd order polynomial
 
 ## Dependent JS
 
@@ -62,6 +62,10 @@ var Arr = [
 ```
 
 ## Why
+
+
+> Affine transformation by 2nd order polynomial
+
 
 When some online map too same but still has position difference, we could use this method find transform parameters,
 and we could get where is different, I know every PC software could do this, but website more convenient, 
