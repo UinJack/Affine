@@ -64,7 +64,7 @@ var Arr = [
 ## Why
 
 When some online map too same but still has position difference, we could use this method find transform parameters,
-and we could get where is different,I know every PC software could do this, but website more convenient, 
+and we could get where is different, I know every PC software could do this, but website more convenient, 
 when we couldn't update online map, however we could update points. 
 
 ## License
