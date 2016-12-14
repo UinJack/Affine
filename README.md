@@ -7,7 +7,7 @@ By 2nd order polynomial correct points.
 * [sylvester.js](http://sylvester.jcoglan.com/)
 * [leaflet.js](http://leafletjs.com/)
 
-## [Demo](https://bkgiser.github.io/Affine_Transformation/)
+## [Demo](https://bkgiser.github.io/Affine/)
 
 ![img](css/view.gif)
 
