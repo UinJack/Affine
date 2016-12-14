@@ -16,14 +16,13 @@ Use 2nd order polynomial correct points.
 var mat = new MatrixCalc(Arr);
 
 ```
-#### Arr
-
-> properties must be more than 7
 
 
-```json
 
-[
+```javascript
+
+//properties must be more than 7
+var Arr = [
   {
     "from": [
       116.36778831481935,
@@ -49,6 +48,12 @@ var mat = new MatrixCalc(Arr);
 ```
 
 ### Method to_target(x,y)
+
+```javascript
+    
+     return {x: targetX, y: targetY};
+
+```
 
 
 ### Method to_target(x,y)
