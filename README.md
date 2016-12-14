@@ -19,6 +19,8 @@ var mat = new MatrixCalc(Arr);
 #### Arr
 
 > properties must be more than 7
+
+
 ```json
 
 [
