@@ -7,7 +7,7 @@ Affine transformation by 2nd order polynomial
 * [sylvester.js](http://sylvester.jcoglan.com/)
 * [leaflet.js](http://leafletjs.com/)
 
-## [Demo](https://bkgiser.github.io/Affine/)
+## [Demo](https://uinjack.github.io/Affine/)
 
 ![img](css/view.gif)
 
